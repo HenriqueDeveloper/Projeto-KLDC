@@ -1,0 +1,330 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços - FireGuard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <style>
+        .services-hero {
+            background: rgb(253,29,29);
+            background: linear-gradient(90deg, rgba(253,29,29,1) 0%, rgba(252,176,69,1) 84%);
+            color: var(--white);
+            text-align: center;
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(0,0,0,0.1), transparent);
+            z-index: 1;
+        }
+
+        .services-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .services-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .services-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        .services-detailed .service-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .services-detailed .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+        }
+
+        .services-detailed .service-card i {
+            font-size: 3rem;
+            color: var(--primary-red);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .services-detailed .service-card h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 15px;
+            color: var(--black);
+            transition: color 0.3s ease;
+        }
+
+        .services-detailed .service-card p {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            color: var(--gray);
+            line-height: 1.7;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .services-detailed .service-card ul {
+            font-family: 'Inter', sans-serif;
+            list-style-type: none;
+            padding: 0;
+            margin-top: auto;
+        }
+
+        .services-detailed .service-card ul li {
+            font-size: 0.9rem;
+            color: var(--gray);
+            padding: 8px 0;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            transition: color 0.3s ease;
+        }
+
+        .services-detailed .service-card ul li:hover {
+            color: var(--primary-red);
+        }
+        @media (max-width: 768px) {
+            .hamburger-menu {
+                display: block;
+                cursor: pointer;
+                z-index: 1100;
+                position: relative;
+            }
+
+            .hamburger-menu span {
+                display: block;
+                width: 25px;
+                height: 3px;
+                background-color: var(--primary-red);
+                margin: 5px 0;
+                transition: 0.4s;
+                transform-origin: center;
+            }
+
+            .hamburger-menu.active span:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+
+            .hamburger-menu.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger-menu.active span:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%; 
+                width: 50%; 
+                height: 100vh;
+                background-color: var(--white);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                z-index: 1000;
+                transition: right 0.4s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+                box-shadow: -10px 0 20px rgba(0,0,0,0.1);
+            }
+
+            .nav-menu.active {
+                right: 0;
+            }
+
+            .nav-menu li {
+                margin: 15px 0;
+                opacity: 0;
+                transform: translateX(30px);
+                transition: 
+                    opacity 0.4s cubic-bezier(0.77, 0.2, 0.05, 1.0), 
+                    transform 0.4s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+            }
+
+            .nav-menu.active li {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            .nav-menu li:nth-child(1) { transition-delay: 0.1s; }
+            .nav-menu li:nth-child(2) { transition-delay: 0.2s; }
+            .nav-menu li:nth-child(3) { transition-delay: 0.3s; }
+            .nav-menu li:nth-child(4) { transition-delay: 0.4s; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="img/logo.JPG">
+            </div>
+            <div class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Serviços</a></li>
+                <li><a href="gallery.html">Galeria</a></li>
+                <li><a href="contact.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero services-hero">
+            <div class="container">
+                <h1>Soluções Estratégicas em Segurança</h1>
+                <p>Desenvolvemos serviços personalizados que combinam tecnologia avançada, expertise técnica e compromisso absoluto com a proteção de sua empresa.</p>
+            </div>
+        </section>
+
+        <section class="services-detailed container">
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-search-plus"></i>
+                    <h3>Análise de Risco</h3>
+                    <p>Diagnóstico detalhado para identificação e mitigação de vulnerabilidades em seu ambiente corporativo.</p>
+                    <ul>
+                        <li>Inspeção completa das instalações</li>
+                        <li>Identificação de pontos críticos</li>
+                        <li>Relatório técnico detalhado</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-fire-extinguisher"></i>
+                    <h3>Sistemas de Combate</h3>
+                    <p>Soluções integradas de prevenção e combate a incêndios com equipamentos de última geração.</p>
+                    <ul>
+                        <li>Hidrantes e extintores</li>
+                        <li>Sistemas de alarme</li>
+                        <li>Detecção e supressão</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Treinamento</h3>
+                    <p>Capacitação especializada em emergências e prevenção</p>
+                    <ul>
+                        <li>Brigada de incêndio</li>
+                        <li>Primeiros socorros</li>
+                        <li>Simulados de evacuação</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-hard-hat"></i>
+                    <h3>Consultoria</h3>
+                    <p>Assessoria técnica especializada em segurança contra incêndios</p>
+                    <ul>
+                        <li>Adequação normativa</li>
+                        <li>Laudos técnicos</li>
+                        <li>Projetos personalizados</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Proteção Passiva</h3>
+                    <p>Soluções de prevenção e contenção de propagação de incêndios</p>
+                    <ul>
+                        <li>Compartimentação</li>
+                        <li>Materiais resistentes ao fogo</li>
+                        <li>Sistemas de vedação</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-building"></i>
+                    <h3>Gestão de Emergência</h3>
+                    <p>Desenvolvimento de planos e protocolos de segurança</p>
+                    <ul>
+                        <li>Plano de emergência</li>
+                        <li>Rotas de fuga</li>
+                        <li>Coordenação de evacuação</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-industry"></i>
+                    <h3>Segurança Industrial</h3>
+                    <p>Soluções específicas para ambientes industriais e de alto risco</p>
+                    <ul>
+                        <li>Análise de processos</li>
+                        <li>Sistemas especializados</li>
+                        <li>Gestão de riscos industriais</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-diagnoses"></i>
+                    <h3>Diagnóstico Técnico</h3>
+                    <p>Avaliação completa e detalhada dos sistemas de segurança</p>
+                    <ul>
+                        <li>Inspeção de equipamentos</li>
+                        <li>Testes de funcionamento</li>
+                        <li>Relatórios técnicos</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                   <img class="logo" src="img/logo.JPG" alt="logo-kldc">
+                </div>
+                <div class="footer-links">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="services.html">Serviços</a></li>
+                        <li><a href="gallery.html">Galeria</a></li>
+                        <li><a href="contact.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contato</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Guarulhos, SP</p>
+                    <p><i class="fas fa-phone"></i> (11) 98551-5941</p>
+                    <p><i class="fas fa-envelope"></i> clecio@kldcsistemas.net.br</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 KLDC Sistemas. Todos os direitos reservados.</p>
+                <a class="eu" href="https://www.linkedin.com/in/henrique-developer/"><p>Desenvolvido por Henrique Alencar Santos.</p></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,470 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KLDC Sistemas - Soluções Avançadas em Segurança Contra Incêndios</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="gallery.css">
+    <script src="script.js" defer></script>
+    <script src="gallery.js" defer></script>
+    <style>
+        .professional-hero {
+            background: rgb(253,29,29);
+            background: linear-gradient(90deg, rgba(253,29,29,1) 0%, rgba(252,176,69,1) 84%);
+            color: var(--white);
+            text-align: center;
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .professional-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(0,0,0,0.1), transparent);
+            z-index: 1;
+        }
+
+        .professional-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .professional-hero .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .professional-hero .hero-content p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+            opacity: 0.9;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .hero-cta {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .hero-cta .btn-primary, 
+        .hero-cta .btn-secondary {
+            padding: 12px 30px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .hero-cta .btn-primary {
+            background-color: var(--white);
+            color: var(--primary-red);
+        }
+
+        .hero-cta .btn-primary:hover {
+            background-color: rgba(255,255,255,0.9);
+            transform: translateY(-5px);
+        }
+
+        .hero-cta .btn-secondary {
+            border: 2px solid var(--white);
+            color: var(--white);
+            background: transparent;
+        }
+
+        .hero-cta .btn-secondary:hover {
+            background-color: rgba(255,255,255,0.1);
+            transform: translateY(-5px);
+        }
+
+        .services {
+            background: rgb(253,29,29);
+            background: linear-gradient(90deg, rgba(253,29,29,1) 0%, rgba(252,176,69,1) 84%);
+            color: var(--white);
+            color: var(--white);
+            text-align: center;
+            padding: 80px 0;
+            position: relative;
+            width: 100vw;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+        }
+
+        .services .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+            justify-content: center;
+        }
+
+        .services .service-card {
+            background-color: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.4s ease;
+            color: var(--white);
+        }
+
+        .services .service-card:hover {
+            transform: translateY(-10px);
+            background-color: rgba(255,255,255,0.2);
+        }
+
+        .services .service-card i {
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+
+        .services .service-card h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+
+        .services .service-card p {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            line-height: 1.7;
+            opacity: 0.9;
+        }
+
+        .services-cta {
+            margin-top: 50px;
+        }
+
+        .services .btn-primary {
+            background-color: var(--white);
+            color: var(--primary-red);
+            padding: 12px 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .services .btn-primary:hover {
+            background-color: rgba(255,255,255,0.9);
+            transform: translateY(-5px);
+        }
+        
+        @media (max-width: 768px) {
+            .hamburger-menu {
+                display: block;
+                cursor: pointer;
+                z-index: 1100;
+                position: relative;
+            }
+
+            .hamburger-menu span {
+                display: block;
+                width: 25px;
+                height: 3px;
+                background-color: var(--primary-red);
+                margin: 5px 0;
+                transition: 0.4s;
+                transform-origin: center;
+            }
+
+            .hamburger-menu.active span:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+
+            .hamburger-menu.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger-menu.active span:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%; 
+                width: 50%; 
+                height: 100vh;
+                background-color: var(--white);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                z-index: 1000;
+                transition: right 0.4s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+                box-shadow: -10px 0 20px rgba(0,0,0,0.1);
+            }
+
+            .nav-menu.active {
+                right: 0;
+            }
+
+            .nav-menu li {
+                margin: 15px 0;
+                opacity: 0;
+                transform: translateX(30px);
+                transition: 
+                    opacity 0.4s cubic-bezier(0.77, 0.2, 0.05, 1.0), 
+                    transform 0.4s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+            }
+
+            .nav-menu.active li {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            .nav-menu li:nth-child(1) { transition-delay: 0.1s; }
+            .nav-menu li:nth-child(2) { transition-delay: 0.2s; }
+            .nav-menu li:nth-child(3) { transition-delay: 0.3s; }
+            .nav-menu li:nth-child(4) { transition-delay: 0.4s; }
+        }
+
+        @media (max-width: 480px) {
+            .services .services-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .services .service-card {
+                padding: 25px;
+            }
+
+            .nav-menu {
+                width: 100%;  
+            }
+        }
+
+        .about-section .about-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            padding: 80px 0;
+        }
+
+        .about-section .about-content > * {
+            flex: 1;
+        }
+
+        .about-video {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 600px;
+        }
+
+        .about-video video {
+            width: 100%;
+            max-width: 500px;  
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .about-video video:hover {
+            transform: scale(1.02);
+        }
+
+        @media (max-width: 992px) {
+            .about-section .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-video {
+                margin-top: 30px;
+                justify-content: center;
+                width: 100%;
+            }
+
+            .about-video video {
+                max-width: 400px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .about-video video {
+                max-width: 300px;
+                max-height: 250px;
+                object-fit: cover;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="img/logo.JPG">
+            </div>
+            <div class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Serviços</a></li>
+                <li><a href="gallery.html">Galeria</a></li>
+                <li><a href="contact.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero professional-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Excelência em Segurança Contra Incêndios</h1>
+                    <p><em>Soluções estratégicas e inovadoras para proteção integral de empresas e instituições, com tecnologia de ponta e expertise técnica especializada.</em></p>
+                    <div class="hero-cta">
+                        <a href="services.html" class="btn-primary">Nossos Serviços</a>
+                        <a href="contact.html" class="btn-secondary">Solicitar Orçamento</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2><em>Quem Somos?</em></h2>
+                    <p>Atuando no mercado desde 2013, a <b><em>KLDC</em></b> é focada na execução de instalações e manutenções de sistemas de Prevenção a Combate à Incêndio.
+                        Iniciando a elaboração de projetos para obtenção das licenças junto o Corpo de Bombeiros (AVCB) ou adequando os sistemas para renovação.
+                    </p>
+                    <div class="key-metrics">
+                        <div class="metric">
+                            <h3>+250</h3>
+                            <p>Projetos Concluídos</p>
+                        </div>
+                        <div class="metric">
+                            <h3>+100</h3>
+                            <p>Clientes Atendidos</p>
+                        </div>
+                        <div class="metric">
+                            <h3>12+</h3>
+                            <p>Anos no Mercado</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-video">
+                    <video controls>
+                        <source src="video/kldc.mp4" type="video/mp4">
+                        Seu navegador não suporta vídeos.
+                    </video>                    
+                </div>
+            </div>
+        </section>
+
+        <section class="services">
+            <div class="container">
+                <h2><em>Principais Serviços</em></h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <i class="fas fa-search-plus"></i>
+                        <h3>Análise de Risco</h3>
+                        <p>Diagnóstico detalhado de vulnerabilidades e estratégias preventivas</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-fire-extinguisher"></i>
+                        <h3>Sistemas de Combate</h3>
+                        <p>Instalação e manutenção de sistemas preventivos de última geração</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>Treinamento Especializado</h3>
+                        <p>Capacitação técnica em emergências e prevenção de riscos</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Proteção Integrada</h3>
+                        <p>Soluções abrangentes de prevenção e contenção de incêndios</p>
+                    </div>
+                </div>
+                <div class="services-cta">
+                    <a href="services.html" class="btn-primary">Ver Todos os Serviços</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="clients container">
+            <h2><em>Empresas Parceiras</em></h2>
+            <div class="clients-grid">
+                <div class="client-logo"><a href="https://habitacional.com.br/"><img class="position-hab" src="img/clientes/cliente1.jpg" alt="Logo Habitacional"></a></div>
+                <div class="client-logo"><a href="https://portalfornecedor.gruposc.com.br/mobile-link/#/login"><img src="img/clientes/cliente2.jpg" alt="logo gruposc"></a></div>
+                <div class="client-logo"><a href="https://www.socicam.com.br/"><img src="img/clientes/cliente5.jpg" alt="Logo socicam"></a></div>
+                <div class="client-logo"><a href="https://www.acciona.com.br/"><img src="img/clientes/cliente4.jpg" alt="logo acciona"></a></div>
+                <div class="client-logo"><a href="https://site.fastshop.com.br/?utm_source=google&utm_medium=cpc&utm_campaign=21728674987&utm_term=g&gad_source=1&gclid=CjwKCAiAtYy9BhBcEiwANWQQL6ZHu4ZgoxAk_A-yqIDD7FqnjY-TPfJChq1iNNMt4DyBcjTImO9myhoC6GgQAvD_BwE"><img class="position-logo" src="img/clientes/cliente6.jpeg" alt="logo fast shop"></a></div>
+                <div class="client-logo"><a href="https://www.marabraz.com.br/?srsltid=AfmBOorpgnk5QWtOxGfCbmbqqb3V5Al7iXv3bSDBZ0Z3SDmSlTpxG81o"><img src="img/clientes/cliente7.webp" alt="logo marabraz"></a></div>
+                <div class="client-logo"><a href="https://lpbens.com.br/"><img class="position-logo" src="img/clientes/cliente8.jpg" alt="logo lp bens"></a></div>
+                <div class="client-logo"><a href="https://www.leomadeiras.com.br/?gad_source=1&gclid=CjwKCAiAtYy9BhBcEiwANWQQLwhle3NoJwngXDZOeUR2mzGmh42YkySedbISLzrF87xTDkivr7mgcBoC1zEQAvD_BwE"><img class="position-logo" src="img/clientes/cliente9.jpg" alt="logo leo "></a></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                   <img class="logo" src="img/logo.JPG" alt="logo-kldc">
+                </div>
+                <div class="footer-links">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="services.html">Serviços</a></li>
+                        <li><a href="gallery.html">Galeria</a></li>
+                        <li><a href="contact.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contato</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Guarulhos, SP</p>
+                    <p><i class="fas fa-phone"></i> (11) 98551-5941</p>
+                    <p><i class="fas fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="84e7e8e1e7edebc4efe8e0e7f7edf7f0e1e9e5f7aaeae1f0aae6f6">[email&#160;protected]</a></p>
+                </div>
+                <div class="footer-social">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 KLDC Sistemas. Todos os direitos reservados.</p>
+                <a class="eu" href="https://www.linkedin.com/in/henrique-developer/"><p>Desenvolvido por Henrique Alencar Santos.</p></a>
+            </div>
+        </div>
+    </footer>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+</body>
+</html>

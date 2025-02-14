@@ -1,117 +1,131 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const instagramPosts = [
+    const galleryItems = [
         {
             id: 1,
-            image: 'img/obras/img2.jpg',
-            caption: 'Instalação de válvula de alívio. (Santa Cruz) ',
-            likes: 157,
-            username: 'kldc.sistemas',
-            views: 1256,
-            liked: false
+            image: 'img/obras/img17.jpg',
+            title: 'Montagem de Infraestrutura',
+            description: 'Montagem de Infraestrutura de Sprinklers em Tenda (Distribuidora de Medicamentos Phanfarma, 📍Jundiaí).'
         },
         {
             id: 2,
-            image: 'img/obras/img5.jpg',
-            caption: 'Manutenção corretiva em moto bomba. (Phampharma) ',
-            likes: 243,
-            username: 'kldc.sistemas',
-            views: 2103,
-            liked: false
+            image: 'img/obras/img13.jpg',
+            title: 'Montagem de Infraestrutura',
+            description: 'Montagem de infraestrutura de Splinklers em Tenda (Distribuidora de Medicamentos Panfarma, 📍Jundiaí).'
         },
         {
             id: 3,
-            image: 'img/obras/img7.jpg',
-            caption: ' Instalação de sistema de VGAs. (Terminal rodoviário Tietê) ',
-            likes: 189,
-            username: 'kldc.sistemas',
-            views: 1789,
-            liked: false
+            image: 'img/obras/img18.jpg',
+            title: 'Montagem de Infraestrutura',
+            description: 'Montagem de infraestrutura de Splinklers (Galpão Léo Madeiras, 📍Barueri).'
         },
         {
             id: 4,
-            image: 'img/obras/img9.jpg',
-            caption: ' Retrofit do sistema de hidrantes. (Terminal Rodoviário Tietê) ',
-            likes: 134,
-            username: 'kldc.sistemas',
-            views: 987,
-            liked: false
+            image: 'img/obras/img14.jpg',
+            title: 'Montagem de Infraestrutura',
+            description: 'Montagem de infraestrutura de Splinklers (Galpão Léo Madeiras, 📍Barueri).'
         },
         {
             id: 5,
-            image: 'img/obras/img11.jpg',
-            caption: 'Instalação de bomba de incêndio. (Terminal Rodoviário Tietê)',
-            likes: 221,
-            username: 'kldc.sistemas',
-            views: 1645,
-            liked: false
+            image: 'img/obras/img27.jpg',
+            title: 'Montagem de Infraestrutura',
+            description: 'Montagem de Infraestrutura de Rede de Hidrantes (Linha Amarela, 📍Metrô Acciona).'
         },
         {
             id: 6,
-            image: 'img/obras/img6.jpg',
-            caption: 'Checagem de equipamentos de segurança antes de uma inspeção.',
-            likes: 176,
-            username: 'kldc.sistemas',
-            views: 1432,
-            liked: false
+            image: 'img/obras/img12.jpg',
+            title: 'Instalação de Rede de Hidrantes',
+            description: 'Retrofit de Casa de Bomba de Hidrantes (Terminal Rodoviário Intermunicipal, 📍Campinas).'
+        },
+        {
+            id: 7,
+            image: 'img/obras/img24.jpg',
+            title: 'Instalação de Rede de Hidrantes (Parte 2)',
+            description: 'Retrofit de Casa de Bomba de Hidrantes (Terminal Rodoviário Intermunicipal, 📍Campinas).'
+        },
+        {
+            id: 8,
+            image: 'img/obras/img5.jpg',
+            title: 'Manutenção Preventiva',
+            description: 'Manutenção Preventiva em Motobomba (Condomínio Gato Preto, 📍Cajamar).'
+        },
+        {
+            id: 9,
+            image: 'img/obras/img28.jpg',
+            title: 'Montagem de Infraestrutura',
+            description: 'Montagem de Infraestrutura de Rede de Sprinklers (Fast Shop, 📍Recife).'
+        },
+        {
+            id: 10,
+            image: 'img/obras/img7.jpg',
+            title: 'Montagem de Sistema.',
+            description: 'Montagem de Sistema VGA (Terminal Rodoviário Tietê, 📍São Paulo).'
+        },
+        {
+            id: 11,
+            image: 'img/obras/img9.jpg',
+            title: 'Manutenção Preventiva',
+            description: 'Retrofit de Sistemas de Hidrantes (Terminal Rodoviário Tietê, 📍São Paulo).'
+        },
+        {
+            id: 12,
+            image: 'img/obras/img11.jpg',
+            title: 'Instalação',
+            description: 'Instalação de Bomba de Incêndio (Terminal Rodoviário Tietê, 📍São Paulo).'
+        },
+        {
+            id: 13,
+            image: 'img/obras/img2.jpg',
+            title: 'Instalação',
+            description: 'Instalação de Válvula de Alívio (Distribuidora de Medicamentos Panfarma, 📍Jundiaí).'
+        },
+        {
+            id: 14,
+            image: 'img/obras/img10.jpg',
+            title: 'Manutenção Preventiva',
+            description: 'Manutenção Preventiva em Sistema de Gás Co2 (Usina Hidrelétrica Paranapanema, 📍Piraju).'
+        },
+        {
+            id: 15,
+            image: 'img/obras/img22.jpg',
+            title: 'Manutenção Preventiva',
+            description: 'Retrofit de Rede de Hidrantes (Terminal Rodoviário Intermunicipal, 📍Campinas).'
         }
     ];
 
-    const instagramPostsContainer = document.getElementById('instagram-posts');
+    function initializeGallery() {
+        const galleryContainer = document.getElementById('professional-gallery');
+        
+        if (!galleryContainer) {
+            console.error('Gallery container not found');
+            return;
+        }
 
-    function createPostElement(post) {
-        const postElement = document.createElement('div');
-        postElement.classList.add('instagram-post');
-        postElement.innerHTML = `
-            <div class="post-header">
-                <img src="img/logo.JPG" class="profile-pic">
-                <span class="username">${post.username}</span>
+        galleryContainer.innerHTML = '';
+
+        galleryItems.forEach(item => {
+            const galleryItemElement = createGalleryItem(item);
+            galleryContainer.appendChild(galleryItemElement);
+        });
+    }
+
+    function createGalleryItem(item) {
+        const galleryItemElement = document.createElement('div');
+        galleryItemElement.classList.add('gallery-item');
+        galleryItemElement.innerHTML = `
+            <div class="gallery-item-image">
+                <img src="${item.image}" alt="${item.title}" loading="lazy">
             </div>
-            <div class="post-image">
-                <img src="${post.image}" alt="Post image">
-            </div>
-            <div class="post-actions">
-                <button class="like-btn ${post.liked ? 'liked' : ''}" data-id="${post.id}">
-                    <i class="fas fa-heart"></i>
-                </button>
-                <button class="comment-btn" disabled>
-                    <i class="fas fa-comment"></i>
-                </button>
-            </div>
-            <div class="post-details">
-                <p class="likes-count">${post.likes} curtidas</p>
-                <p class="post-caption">
-                    <strong>${post.username}</strong> ${post.caption}
-                </p>
-                <p class="post-views">Visualizações: ${post.views}</p>
+            <div class="gallery-item-details">
+                <div>
+                    <h3 class="gallery-item-title">${item.title}</h3>
+                    <p class="gallery-item-description">${item.description}</p>
+                </div>
             </div>
         `;
 
-        const likeBtn = postElement.querySelector('.like-btn');
-        likeBtn.addEventListener('click', () => {
-            toggleLike(post, likeBtn);
-        });
-
-        return postElement;
-    }
-
-    function toggleLike(post, likeBtn) {
-        const likesCountElement = likeBtn.closest('.instagram-post').querySelector('.likes-count');
-        
-        if (post.liked) {
-            post.likes--;
-            likeBtn.classList.remove('liked');
-        } else {
-            post.likes++;
-            likeBtn.classList.add('liked');
-        }
-        
-        post.liked = !post.liked;
-        likesCountElement.textContent = `${post.likes} curtidas`;
+        return galleryItemElement;
     }
 
     
-    instagramPosts.forEach(post => {
-        const postElement = createPostElement(post);
-        instagramPostsContainer.appendChild(postElement);
-    });
+    initializeGallery();
 });

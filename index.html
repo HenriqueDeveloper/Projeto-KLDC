@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KLDC Sistemas - Soluções Avançadas em Segurança Contra Incêndios</title>
+    <link class="icon" rel="icon" type="image/png" href="img/logo-sf.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -318,6 +319,105 @@
                 object-fit: cover;
             }
         }
+        
+        .company-details-section {
+            background-color: var(--white);
+            padding: 80px 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .company-details-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .company-details-section h2 {
+            color: var(--primary-red);
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+        }
+
+        .company-details-section p {
+            color: var(--gray);
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .company-details-section {
+                padding: 50px 15px;
+            }
+
+            .company-details-section h2 {
+                font-size: 2rem;
+            }
+
+            .company-details-section p {
+                font-size: 1rem;
+            }
+        }
+
+        .company-image-section {
+            background-color: var(--white);
+            padding: 80px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .company-large-image {
+            max-width: 1200px;
+            max-height: 400px;
+            margin: 0 auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .company-large-image:hover {
+            transform: scale(1.02);
+        }
+
+        .company-large-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+        
+        .about-video-caption {
+            text-align: center;
+            margin-top: 15px;
+            color: var(--gray);
+            font-style: italic;
+            font-size: 0.9rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (max-width: 992px) {
+            .about-video-caption {
+                max-width: 400px;
+                padding: 0 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .about-video-caption {
+                max-width: 300px;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .company-large-image {
+                margin: 0 15px;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -334,8 +434,8 @@
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html">Serviços</a></li>
-                <li><a href="gallery.html">Galeria</a></li>
                 <li><a href="contact.html">Contato</a></li>
+                <li><a href="gallery.html">Galeria</a></li>
             </ul>
         </nav>
     </header>
@@ -363,11 +463,11 @@
                     </p>
                     <div class="key-metrics">
                         <div class="metric">
-                            <h3>+250</h3>
+                            <h3>+900</h3>
                             <p>Projetos Concluídos</p>
                         </div>
                         <div class="metric">
-                            <h3>+100</h3>
+                            <h3>+750</h3>
                             <p>Clientes Atendidos</p>
                         </div>
                         <div class="metric">
@@ -377,11 +477,35 @@
                     </div>
                 </div>
                 <div class="about-video">
-                    <video controls>
-                        <source src="video/kldc.mp4" type="video/mp4">
-                        Seu navegador não suporta vídeos.
-                    </video>                    
+                    <div>
+                        <video controls>
+                            <source src="video/kldc.mp4" type="video/mp4">
+                            Seu navegador não suporta vídeos.
+                        </video>
+                        <div class="about-video-caption">
+                            <strong><em>Manutenção Corretiva de Sistema de Motobomba</em></strong><em><br>(Distribuidora de Medicamentos Santa Cruz, 📍Osasco - SP)</em>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </section>
+
+        <section class="company-details-section">
+            <div class="container">
+                <div class="company-details-content">
+                    <h2>Sobre a KLDC Sistemas</h2>
+                    <p>Desde 2013, a KLDC tem se destacado no mercado como referência na execução de instalações e manutenções de sistemas de Prevenção e Combate a Incêndios. Nosso compromisso é garantir a segurança e conformidade dos empreendimentos, oferecendo soluções completas e personalizadas.
+
+                    <p>Além da execução dos sistemas, atuamos na elaboração de projetos para obtenção do Auto de Vistoria do Corpo de Bombeiros (AVCB) e na adequação de instalações para a renovação das licenças. Com uma equipe altamente qualificada e em constante atualização, trabalhamos com eficiência e responsabilidade para atender às normas vigentes e proporcionar tranquilidade aos nossos clientes.</p>
+                        
+                        Na KLDC, a segurança vem sempre em primeiro lugar!</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="company-image-section">
+            <div class="company-large-image">
+                <img src="img/obras/img13.jpg" alt="KLDC Sistemas - Equipe e Infraestrutura">
             </div>
         </section>
 
@@ -435,27 +559,28 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                   <img class="logo" src="img/logo.JPG" alt="logo-kldc">
+                   <img class="logo" src="img/logo-sf.png" alt="logo-kldc">
                 </div>
                 <div class="footer-links">
                     <h4>Links Rápidos</h4>
                     <ul>
                         <li><a href="index.html">Início</a></li>
                         <li><a href="services.html">Serviços</a></li>
-                        <li><a href="gallery.html">Galeria</a></li>
                         <li><a href="contact.html">Contato</a></li>
                     </ul>
                 </div>
                 <div class="footer-contact">
                     <h4>Contato</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> Guarulhos, SP</p>
+                    <p><i class="fas fa-map-marker-alt"></i> R. Balsa, 602 - Freguesia do Ó</p>
+                    <p><i class="fas fa-map-marker-alt"></i> R. Sd Côcco, 66 - Jd. Papai</p>
                     <p><i class="fas fa-phone"></i> (11) 98551-5941</p>
-                    <p><i class="fas fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="84e7e8e1e7edebc4efe8e0e7f7edf7f0e1e9e5f7aaeae1f0aae6f6">[email&#160;protected]</a></p>
+                    <p><i class="fas fa-envelope"></i> clecio@kldcsistemas.net.br</p>
                 </div>
                 <div class="footer-social">
                     <h4>Redes Sociais</h4>
                     <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="https://wa.me/5511985515941" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100066932003720&locale=pt_BR" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
                     </div>
                 </div>
             </div>

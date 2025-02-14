@@ -6,25 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
   function toggleMenu() {
     hamburgerMenu.classList.toggle('active');
     navMenu.classList.toggle('active');
-
-    
-    const menuItems = navMenu.querySelectorAll('li');
-    menuItems.forEach((item, index) => {
-      if (navMenu.classList.contains('active')) {
-        item.style.transitionDelay = `${index * 0.1}s`;
-        item.style.opacity = '0';
-        item.style.transform = 'translateX(30px)';
-        
-        
-        setTimeout(() => {
-          item.style.opacity = '1';
-          item.style.transform = 'translateX(0)';
-        }, index * 100);
-      } else {
-        item.style.opacity = '0';
-        item.style.transform = 'translateX(30px)';
-      }
-    });
   }
 
   

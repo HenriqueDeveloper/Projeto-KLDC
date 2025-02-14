@@ -2,7 +2,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato - FireGuard</title>
+    <title>Contato - KLDC Sistemas</title>
+    <link rel="icon" type="image/png" href="img/logo-sf.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -224,6 +225,51 @@
             .nav-menu li:nth-child(3) { transition-delay: 0.3s; }
             .nav-menu li:nth-child(4) { transition-delay: 0.4s; }
         }
+        /* Map Section Styles */
+        .company-location {
+            background-color: var(--white);
+            padding: 80px 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .company-location .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .company-location h2 {
+            color: var(--primary-red);
+            margin-bottom: 30px;
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .map-container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .map-container:hover {
+            transform: scale(1.01);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+        }
+
+        @media (max-width: 768px) {
+            .map-container iframe {
+                height: 300px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -240,8 +286,8 @@
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html">Serviços</a></li>
-                <li><a href="gallery.html">Galeria</a></li>
                 <li><a href="contact.html">Contato</a></li>
+                <li><a href="gallery.html">Galeria</a></li>
             </ul>
         </nav>
     </header>
@@ -258,8 +304,8 @@
             <div class="contact-form-wrapper">
                 <div class="contact-form-content">
                     <h2>Solicite um Orçamento</h2>
-                    <p>Preencha o formulário abaixo e nossa equipe entrará em contato</p>
-                    <form action="https://formsubmit.co/henriquealencar23062006@gmail.com" method="POST">
+                    <p></p>
+                    <form action="https://formsubmit.co/clecio@kldcsistemas.net.br" method="POST">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">Nome Completo</label>
@@ -308,13 +354,30 @@
                 </div>
             </div>
         </section>
+
+        <section class="company-location">
+            <div class="container">
+                <h2>Localização</h2>
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!4v1739294304342!6m8!1m7!1s7Zat_-POE2WLDBRfondeuw!2m2!1d-23.50511932224555!2d-46.69965792538834!3f356.9930586467082!4f13.407060692051104!5f0.6296745930380993" 
+                        width="600" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                   <img class="logo" src="img/logo.JPG" alt="logo-kldc">
+                   <img class="logo" src="img/logo-sf.png" alt="logo-kldc">
                 </div>
                 <div class="footer-links">
                     <h4>Links Rápidos</h4>
@@ -327,14 +390,16 @@
                 </div>
                 <div class="footer-contact">
                     <h4>Contato</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> Guarulhos, SP</p>
+                    <p><i class="fas fa-map-marker-alt"></i> R. Balsa, 602 - Freguesia do Ó</p>
+                    <p><i class="fas fa-map-marker-alt"></i> R. Sd Côcco, 66 - Jd. Papai</p>
                     <p><i class="fas fa-phone"></i> (11) 98551-5941</p>
                     <p><i class="fas fa-envelope"></i> clecio@kldcsistemas.net.br</p>
                 </div>
                 <div class="footer-social">
                     <h4>Redes Sociais</h4>
                     <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="https://wa.me/5511985515941" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100066932003720&locale=pt_BR" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
                     </div>
                 </div>
             </div>

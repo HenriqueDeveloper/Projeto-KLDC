@@ -578,7 +578,7 @@ footer {
   font-size: 1.5rem;
 }
 .social-icons{
-  margin-left: 40px;
+  margin-left: 20px;
 }
 
 .footer-bottom {
@@ -589,14 +589,16 @@ footer {
 .eu {
   margin-top: 10px;
   display: inline-block;
-  padding: 10px 20px;
-  background-color: black; /* Cor de fundo */
-  color: white; /* Cor do texto */
+  padding: 0px 20px;
+  background-color: black; 
+  color: white; 
   text-decoration: none; 
   font-size: 16px;
   font-weight: bold;
   border-radius: 5px; 
   transition: 0.3s;
+  max-width: 400px;
+  max-height: 30px;
 }
 
 .eu:hover {
